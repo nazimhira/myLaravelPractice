@@ -28,16 +28,13 @@ class PostsController extends Controller
 
         $imagePath = request('image')->store('uploads', 'public');
 
-        $thumbPath = request('image')->store('uploads/thumb', 'public');
-
         /** @var TYPE_NAME $image */
-        $thumb = Image::make(public_path("storage/{$thumbPath}"))->fit(1200, 1200);
-        $thumb->save();
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image->save();
 
     	auth()->user()->posts()->create([
             'caption' => $data['caption'],
             'image' => $imagePath,
-            'image' => $thumbPath,
         ]);
 
     	return redirect('/profile/' . auth()->user()->id);

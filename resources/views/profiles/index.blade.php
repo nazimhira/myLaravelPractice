@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-3 p-5">
                 <img
-                    src="/storage/{{ $user->profile->image }}"
+                    src="{{ $user->profile->profileImage() }}"
                     class="rounded-circle w-100">
             </div>
             <div class="col-md-9 pt-5">

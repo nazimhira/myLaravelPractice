@@ -9,8 +9,11 @@
                     class="rounded-circle w-100">
             </div>
             <div class="col-md-9 pt-5">
-                <div class="d-flex align-items-baseline justify-content-between"><h1
-                        class="pr-3">{{ $user->username }}</h1>
+                <div class="d-flex align-items-baseline justify-content-between">
+                    <div class="d-flex align-content-center">
+                        <h1 class="pr-3">{{ $user->username }}</h1>
+                        <follow-button user-id="{{ $user->id }}"></follow-button>
+                    </div>
                     @can('update', $user->profile)
                         <button style="border: none; background-color: #ffffff" class="pl-3"><a href="/p/create">Add New
                                 Post</a></button>

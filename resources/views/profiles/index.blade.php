@@ -12,7 +12,7 @@
                 <div class="d-flex align-items-baseline justify-content-between">
                     <div class="d-flex align-content-center">
                         <h1 class="pr-3">{{ $user->username }}</h1>
-                        <follow-button user-id="{{ $user->id }}"></follow-button>
+                        <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                     </div>
                     @can('update', $user->profile)
                         <button style="border: none; background-color: #ffffff" class="pl-3"><a href="/p/create">Add New
